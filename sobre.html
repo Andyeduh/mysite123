@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sobre Nós — Morais Piscinas</title>
+  <meta name="description" content="Saiba mais sobre a Morais Piscinas — empresa referência em construção, manutenção e automação de piscinas em Boa Vista - RR." />
+  <link rel="icon" href="https://files.catbox.moe/524v5y.jpeg">
+
+  <style>
+    /* ======== ESTILO GERAL ======== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: #f8fbff;
+      color: #002a54;
+      overflow-x: hidden;
+      animation: fadeIn 0.7s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ======== CABEÇALHO ======== */
+    #site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1200;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 18px;
+      background: rgba(255,255,255,0.3);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-logo {
+      width: 45px;
+      height: 45px;
+      border-radius: 10px;
+    }
+
+    .brand-title {
+      font-weight: 700;
+      color: #003366;
+      font-size: 1.2em;
+    }
+
+    #menu-btn {
+      background: none;
+      border: none;
+      font-size: 2em;
+      cursor: pointer;
+      color: #003366;
+      transition: transform 0.2s ease;
+    }
+
+    #menu-btn:hover {
+      transform: scale(1.1);
+    }
+
+    /* ======== MENU LATERAL ======== */
+    #menu-list {
+      position: fixed;
+      top: 0;
+      right: -65%;
+      width: 60%;
+      height: 100vh;
+      background: rgba(255,255,255,0.25);
+      backdrop-filter: blur(10px);
+      border-radius: 12px 0 0 12px;
+      box-shadow: -4px 0 25px rgba(0,0,0,0.15);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding-top: 90px;
+      transition: right 0.35s ease;
+      z-index: 1300;
+    }
+
+    #menu-list.active { right: 0; }
+
+    .menu-links {
+      list-style: none;
+      text-align: center;
+      width: 100%;
+    }
+
+    .menu-links a {
+      color: #003366;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.2em;
+      display: block;
+      padding: 12px 0;
+      transition: color 0.2s ease;
+    }
+
+    .menu-links a:hover {
+      color: #0090e0;
+    }
+
+    /* ======== LOGOS NO MENU ======== */
+    #menu-logos {
+      margin-top: auto;
+      padding-bottom: 25px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+    #menu-logos img {
+      width: 110px;
+      border-radius: 10px;
+      background: #fff;
+      padding: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    /* ======== BACKDROP ======== */
+    #menu-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.35);
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.3s ease;
+      z-index: 1100;
+    }
+
+    #menu-backdrop.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* ======== CONTEÚDO ======== */
+    main {
+      padding: 120px 20px 60px;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    main h1 {
+      color: #003366;
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    .info-box {
+      background: white;
+      border-radius: 15px;
+      padding: 25px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      text-align: left;
+      animation: fadeIn 1s ease;
+    }
+
+    .info-box h2 {
+      color: #003366;
+      font-size: 1.4em;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #0090e0;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .info-box p {
+      font-size: 1em;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      margin-top: 50px;
+      text-align: center;
+      color: #666;
+      font-size: 0.9em;
+    }
+
+    @media (max-width: 600px) {
+      #menu-list { width: 75%; right: -75%; }
+      main { padding: 100px 15px; }
+      .info-box { padding: 18px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ======== HEADER ======== -->
+  <header id="site-header">
+    <div class="brand">
+      <img src="https://files.catbox.moe/524v5y.jpeg" alt="Morais Piscinas" class="brand-logo">
+      <span class="brand-title">Morais Piscinas</span>
+    </div>
+    <button id="menu-btn" aria-label="Abrir menu">☰</button>
+  </header>
+
+  <!-- ======== MENU LATERAL ======== -->
+  <nav id="menu-list" aria-hidden="true" role="menu">
+    <ul class="menu-links">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="sobre.html">Sobre Nós</a></li>
+      <li><a href="servicos.html">Serviços</a></li>
+      <li><a href="galeria.html">Galeria</a></li>
+      <li><a href="planos.html">Planos</a></li>
+      <li><a href="contato.html">Contato</a></li>
+    </ul>
+    <div id="menu-logos">
+      <img src="https://files.catbox.moe/l556xu.png" alt="Logo 1">
+      <img src="https://files.catbox.moe/wcdm5l.png" alt="Logo 2">
+    </div>
+  </nav>
+  <div id="menu-backdrop"></div>
+
+  <!-- ======== CONTEÚDO PRINCIPAL ======== -->
+  <main>
+    <h1>Sobre Nós</h1>
+    <div class="info-box">
+      <h2>Informativo Empresarial</h2>
+      <p><strong>CNPJ:</strong> 59.344.925/0001-00</p>
+      <p><strong>Razão Social:</strong> Morais e Araujo Piscinas Ltda</p>
+      <p><strong>Nome Fantasia:</strong> Morais Piscinas</p>
+      <p><strong>Data de Abertura:</strong> 07/02/2025</p>
+      <p><strong>Natureza Jurídica:</strong> Sociedade Empresária Limitada (206-2)</p>
+      <p><strong>Situação:</strong> ATIVA desde 07/02/2025</p>
+      <p><strong>Tipo de Unidade:</strong> MATRIZ</p>
+      <p><strong>Opção pelo Simples:</strong> OPTANTE desde 07/02/2025</p>
+      <p><strong>Enquadramento de Porte:</strong> ME</p>
+      <p><strong>Capital Social:</strong> R$ 150.000,00</p>
+      <p><strong>Optante pelo MEI:</strong> Não</p>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 Morais Piscinas — Todos os direitos reservados.
+  </footer>
+
+  <!-- ======== SCRIPT ======== -->
+  <script>
+  document.addEventListener('DOMContentLoaded', function(){
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('menu-list');
+    const backdrop = document.getElementById('menu-backdrop');
+
+    function openMenu(){
+      menu.classList.add('active');
+      backdrop.classList.add('show');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu(){
+      menu.classList.remove('active');
+      backdrop.classList.remove('show');
+      document.body.style.overflow = '';
+    }
+
+    btn.addEventListener('click', () => {
+      menu.classList.contains('active') ? closeMenu() : openMenu();
+    });
+
+    backdrop.addEventListener('click', closeMenu);
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+    document.addEventListener('keydown', e => { if(e.key === 'Escape') closeMenu(); });
+  });
+  </script>
+</body>
+</html>

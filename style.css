@@ -1,0 +1,482 @@
+/* ======== GERAL ======== */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #f5f9ff;
+  color: #003366;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #007BFF, #c9a23f);
+  color: white;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  margin: 0 15px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #ffe082;
+}
+
+/* ======== MENU RESPONSIVO ======== */
+#menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  #menu-btn {
+    display: block;
+  }
+
+  nav ul {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100%;
+    background: linear-gradient(to bottom, #007BFF, #c9a23f);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: right 0.3s ease;
+  }
+
+  nav ul.active {
+    right: 0;
+  }
+
+  nav li {
+    margin: 20px 0;
+  }
+
+  nav a {
+    font-size: 20px;
+  }
+}
+
+/* ======== HERO SECTION ======== */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(to bottom right, #b3e5fc, #c9a23f);
+  color: #003366;
+  animation: fadeIn 1s ease;
+}
+
+.hero h2 {
+  font-size: 2.5em;
+}
+
+.hero .btn {
+  display: inline-block;
+  background: #007BFF;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  margin-top: 20px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.hero .btn:hover {
+  background: #0056b3;
+}
+
+/* ======== FOOTER ======== */
+footer {
+  text-align: center;
+  background: #003366;
+  color: white;
+  padding: 15px;
+}
+
+/* ======== ANIMAÇÕES ======== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* ======== GALERIA ======== */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 15px;
+  padding: 20px;
+  animation: fadeIn 1s ease-in;
+}
+
+.gallery .photo {
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  transition: transform 0.4s ease;
+}
+
+/* Animação de zoom suave ao tocar ou passar o dedo */
+.gallery .photo:hover img {
+  transform: scale(1.05);
+}
+
+/* Ajuste perfeito para celular */
+@media (max-width: 480px) {
+  .gallery {
+    grid-template-columns: 1fr;
+    padding: 10px;
+  }
+  .gallery .photo {
+    border-radius: 10px;
+  }
+}
+
+/* ======== ANIMAÇÃO DE ENTRADA ======== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* ======== FORMULÁRIO GOOGLE — ESTILO PREMIUM ======== */
+.formulario-google {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px auto 70px;
+  width: 95%;
+  max-width: 800px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: linear-gradient(145deg, #fdfdfd, #f4fbff);
+  animation: fadeIn 1s ease-in;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  z-index: 1;
+}
+
+/* 🔥 Moldura animada dourado e azul */
+.formulario-google::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(
+    120deg,
+    #0094ff,
+    #00c3ff,
+    #ffc857,
+    #ffd65b,
+    #0094ff
+  );
+  background-size: 300% 300%;
+  border-radius: 20px;
+  z-index: -1;
+  animation: borderFlow 6s linear infinite;
+}
+
+/* ✨ Brilho suave sobre a moldura */
+.formulario-google::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  z-index: 0;
+}
+
+.formulario-google iframe {
+  width: 100%;
+  height: 1200px;
+  border: none;
+  border-radius: 15px;
+  z-index: 2;
+  position: relative;
+}
+
+/* 🌊 Animação de movimento da luz */
+@keyframes borderFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 📱 Ajuste para celular */
+@media (max-width: 600px) {
+  .formulario-google iframe {
+    height: 1350px;
+  }
+}
+/* ======== FORMULÁRIO GOOGLE RESPONSIVO ======== */
+.formulario-google {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formulario-google iframe {
+  width: 100%;
+  height: 900px;
+  border: none;
+  border-radius: 12px;
+  background: #f7faff;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* ======== FORMULÁRIO GOOGLE RESPONSIVO ======== */
+.formulario-google {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.iframe-container {
+  width: 100%;
+  max-width: 700px;
+  aspect-ratio: 3 / 4;
+  position: relative;
+}
+
+.iframe-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 12px;
+  background: #f7faff;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* ======== FORMULÁRIO GOOGLE RESPONSIVO ======== */
+.formulario-google {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formulario-google iframe {
+  width: 100%;
+  height: 900px;
+  border: none;
+  border-radius: 12px;
+  background: #f7faff;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* ======== BOTÃO WHATSAPP (CENTRALIZADO) ======== */
+.whatsapp-btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px auto 80px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.whatsapp-btn a {
+  background: linear-gradient(90deg, #25d366, #128c7e);
+  color: white;
+  text-decoration: none;
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 50px;
+  box-shadow: 0 0 15px rgba(18, 140, 126, 0.5);
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-align: center;
+}
+
+.whatsapp-btn a:hover {
+  background: linear-gradient(90deg, #128c7e, #25d366);
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+}
+
+/* ✨ Entrada suave */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 📱 Ajustes mobile */
+@media (max-width: 768px) {
+  .formulario-google iframe {
+    height: 1100px;
+  }
+  .whatsapp-btn a {
+    width: 85%;
+    font-size: 1.1rem;
+  }
+/* ===== MENU ===== */
+#menu {
+  width: 100%;
+  position: relative;
+  z-index: 1000;
+}
+
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+.logo h1 {
+  font-size: 20px;
+  color: #003366;
+  margin: 0;
+}
+
+#menu-btn {
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #003366;
+  cursor: pointer;
+}
+
+/* ===== MENU LATERAL ===== */
+#menu-list {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 50%;
+  height: 100vh;
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 20px 0 0 20px;
+  padding-top: 80px;
+  transition: all 0.4s ease;
+}
+
+#menu-list.show {
+  display: flex;
+}
+
+#menu-list li {
+  list-style: none;
+  margin: 12px 0;
+}
+
+#menu-list a {
+  text-decoration: none;
+  color: #003366;
+  font-weight: bold;
+  font-size: 18px;
+  transition: color 0.2s;
+}
+
+#menu-list a:hover {
+  color: #c9a32d;
+}
+
+/* ===== LOGOS NO FINAL ===== */
+#menu-logos {
+  margin-top: auto;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+#menu-logos img {
+  width: 100px;
+  border-radius: 10px;
+  background: #ffffffa1;
+  padding: 5px;
+}
+/* ===== ANIMAÇÃO DE ENTRADA GERAL ===== */
+body {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+body.page-loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== ANIMAÇÕES DE ELEMENTOS ===== */
+[data-animar] {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+[data-animar].animado {
+  opacity: 1;
+  transform: translateY(0);
+}
